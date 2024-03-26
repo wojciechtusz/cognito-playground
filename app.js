@@ -58,7 +58,6 @@ app.post("/login", (req, res) => {
   const { username, password } = req.body;
 
   const params = {
-    // TODO: enable USER_PASSWORD_AUTH for logged in users in Cognito app settings!!!!!!
     AuthFlow: "USER_PASSWORD_AUTH",
     ClientId: "2pv7955aivtn50h3qe27b4g0pl",
     AuthParameters: {
