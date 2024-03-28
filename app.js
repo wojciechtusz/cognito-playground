@@ -18,7 +18,7 @@ app.use(
 );
 
 const cognito = new AWS.CognitoIdentityServiceProvider({
-  region: "eu-north-1",
+  region: "us-east-1",
 });
 
 const PORT = process.env.PORT || 3000;
@@ -29,11 +29,11 @@ app.listen(PORT, () => {
 
 // Signup route
 app.post("/signup", (req, res) => {
-  const { username, password, email } = req.body;
+  const { password, email } = req.body;
 
   const params = {
-    ClientId: "2pv7955aivtn50h3qe27b4g0pl",
-    Username: username,
+    ClientId: "5ocobutrb60t3fcsp5ag6a7dl",
+    Username: email,
     Password: password,
     UserAttributes: [
       {
@@ -59,7 +59,7 @@ app.post("/login", (req, res) => {
 
   const params = {
     AuthFlow: "USER_PASSWORD_AUTH",
-    ClientId: "2pv7955aivtn50h3qe27b4g0pl",
+    ClientId: "5ocobutrb60t3fcsp5ag6a7dl",
     AuthParameters: {
       USERNAME: username,
       PASSWORD: password,
