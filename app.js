@@ -27,7 +27,15 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
-// Signup route
+app.get("/signup", (req, res) => {
+  res.sendFile(__dirname + "/signup.html");
+});
+
+app.get("/login", (req, res) => {
+  res.sendFile(__dirname + "/login.html");
+});
+
+// POST /signup
 app.post("/signup", (req, res) => {
   const { password, email } = req.body;
 
@@ -53,7 +61,7 @@ app.post("/signup", (req, res) => {
   });
 });
 
-// Login route
+// POST /login
 app.post("/login", (req, res) => {
   const { username, password } = req.body;
 
@@ -74,14 +82,4 @@ app.post("/login", (req, res) => {
     console.log(data);
     res.json({ message: "Login successful" });
   });
-});
-
-// Serve signup.html for the signup route
-app.get("/signup", (req, res) => {
-  res.sendFile(__dirname + "/signup.html");
-});
-
-// Serve login.html for the login route
-app.get("/login", (req, res) => {
-  res.sendFile(__dirname + "/login.html");
 });
