@@ -37,10 +37,10 @@ npm install
 
 ## Usage
 
-Start the server:
+Start the app:
 
 ```
-node app.js
+npm start
 ```
 
 Access the application in your browser at `http://localhost:3000`
