@@ -36,7 +36,7 @@ app.get("/login", (req, res) => {
 });
 
 // POST /signup
-app.post("/signup", (req, res) => {
+app.post("/", (req, res) => {
   const { password, email } = req.body;
 
   const params = {
